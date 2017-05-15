@@ -1,0 +1,8 @@
+---
+- name: show return value of command
+  hosts: server1
+  tsks:
+    - name: capture output of id command
+      command: id -un
+      register: login
+    - debug: var=login
