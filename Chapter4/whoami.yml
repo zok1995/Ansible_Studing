@@ -1,8 +1,7 @@
----
-- name: show return value of command
-  hosts: server1
-  tsks:
+- name: show reutrn value of command module
+  hosts: localhost
+  tasks:
     - name: capture output of id command
       command: id -un
       register: login
-    - debug: var=login
+    - debug: msg="Logged in as user {{ login.stdout }}"

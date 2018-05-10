@@ -1,8 +1,7 @@
----
-  - name: pass a messge to command line
-    hosts: localhost
-    vars:
-      greetings: "specify a message"
-    tasks:
-      - name: output message
-        debug: msg="{{ greetings }}"
+- name: pass a message on the command line
+  hosts: localhost
+  vars:
+     greeting: "you didn`t specify a message"
+  tasks:
+    - name: output a message
+      debug: msg="{{ greeting }}"
