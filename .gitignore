@@ -1,5 +1,7 @@
 .idea/
-Chapter2/.idea
-Chapter2/.vagrant
-Chapter2/logs
+
 *.iml
+
+*.retry
+
+Chapter6/secrets.yml
