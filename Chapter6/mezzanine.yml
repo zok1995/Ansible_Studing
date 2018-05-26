@@ -30,3 +30,20 @@
     num_workers: "multiprocessing.cpu_count() * 2 + 1"
   vars_files:
     - secrets.yml
+  tasks:
+    - name: install apt packages
+      apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+      become: True
+      with_items:
+        - git
+        - libjpeg-dev
+        - libpq-dev
+        - memcached
+        - nginx
+        - postgresql
+        - python-dev
+        - python-pip
+        - python-psycopg2
+        - python-setuptools
+        - python-virtualenv
+        - supervisor
